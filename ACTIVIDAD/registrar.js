@@ -2,11 +2,11 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 import { Auth } from "./firebase.js";
 import { mostrarMensaje } from "./mostrarmensajes.js";
 
-const registrar = document.getElementById("registrar");
-registrarform.addEventListener("submit", async(e)=>{
-    e.priventDefault();
-    const email = registrarform["registrar-email"].value;
-    constpassword = registrarform["registrar-password"];
+const Registrar = document.getElementById("registrar-form");
+Registrar.addEventListener("submit", async(e)=>{
+    e.preventDefault();
+    const email = Registrar["registrar-email"].value;
+    const password = Registrar["registrar-password"].value;
     try{
         const userCredential = await createUserWithEmailAndPassword (Auth,email,password);
         console.log(userCredential);
@@ -14,9 +14,17 @@ registrarform.addEventListener("submit", async(e)=>{
         const modal = bootstrap.Modal.getInstance(RegistrarModal);
         modal.hide();
 
-        registrarform.reset();
+        Registrar.reset();
         mostrarMensaje("BIENVENIDO"+ userCredential.user.email);
-    }catch{
-        console.log("error");
+    }catch(error){
+        if(error.code== 'auth/invalid-email'){
+            mostrarMensaje("Email invalido","error")
+        }else if(error.code=== 'auth/weak-password'){
+            mostrarMensaje("password muy corto", "error")
+        }else if(error.code=== "auth/email-already-in-use"){
+            mostrarMensaje("email en uso", "error")
+        }else if(error.code){
+            mostrarMensaje("algo salio mal", "error")
+        }
     }
 });
