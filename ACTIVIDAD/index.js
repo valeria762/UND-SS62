@@ -13,14 +13,15 @@ onAuthStateChanged(Auth ,async(user)=>{
     if(user){
         loginCheck(user);
         try{
-            const mensaje =  "Iniciaste sesion"
-            setupPosts(mensaje)
+            // const mensaje =  "Iniciaste sesion"
+            //setupPosts(mensaje)
+
         }catch(error){
             console.log(error)
         }
     }else{
-        const mensaje = "";
-        setupPosts(mensaje);
+        //onst mensaje = "";
+        //setupPosts(mensaje);
         loginCheck(user)
     }
 });
