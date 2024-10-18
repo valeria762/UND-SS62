@@ -11,7 +11,7 @@ ingresar.addEventListener("submit", async(e)=>{
     try{
         const userCredential = await signInWithEmailAndPassword (Auth,email,password);
         console.log(userCredential);
-        const ingresarModal = document.getElementById("IngrersarModal");
+        const ingresarModal = document.getElementById("IngresarModal");
         const modal = bootstrap.Modal.getInstance(ingresarModal);
         modal.hide();
 

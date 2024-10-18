@@ -2,6 +2,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
   import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+  import { getFirestore, collection, addDoc, getDocs  } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,3 +22,12 @@
   export const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   export const Auth = getAuth(app)
+  export const db = getFirestore(app);
+
+  //Guardar post 
+  export const savePost = (title, description, userMail) => {
+     addDoc(collection(db, "posts"),{title, description, userMail});
+  }
+
+  // Obtener todos los Post
+  export const getPost = () => getDocs(collection(db, "posts"))
