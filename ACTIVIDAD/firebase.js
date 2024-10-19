@@ -2,7 +2,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
   import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-  import { getFirestore, collection, addDoc, getDocs  } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"
+  import { getFirestore, collection, addDoc, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -31,3 +31,6 @@
 
   // Obtener todos los Post
   export const getPost = () => getDocs(collection(db, "posts"))
+
+  // Actualizar Post Automaticamente
+  export const onGetPosts = (callback) => onSnapshot(collection(db,"posts"), callback);

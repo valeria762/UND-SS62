@@ -28,6 +28,7 @@
           </div>
         </div>
     </nav>
+
 <div class="conteiner p-4">
   <div class="row">
     <div class="col-md-6 offset-md-3">
@@ -35,17 +36,26 @@
            <div class="card-body">
             <h1 class="h4">Agregar Post</h1>
             <form id="task-form">
-              <label for="title">Titulo</label>
+              <label for="task-title">Titulo</label>
               <input type="text" id="task-title" class="form-control mb-3" class="Mi primer post" placeholder="Titulo de Post" autofocus>
-              <label for="description">Contenido</label>
+              <label for="task-description">Contenido</label>
               <textarea id="task-description" rows="3" class="form-control mb-3" placeholder="Escribe el contenido"></textarea>
-              <button class=" btn btn-primary" id="btn-task-form">Guardar</button>
+              <button type="submit"  class=" btn btn-primary" id="btn-task-form">Guardar</button>
             </form>
            </div>
         </div>
     </div>
   </div>
 </div> 
+
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <ul class="list-group" id="task-container">
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" id="IngresarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -57,11 +67,11 @@
       <div class="modal-body">
         <form id="ingresar-form">
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Usuario</label>
+            <label for="ingresar-email" class="col-form-label">Usuario</label>
             <input type="text" class="form-control" id="ingresar-email">
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Contraseña</label>
+            <label for="ingresar-password" class="col-form-label">Contraseña</label>
             <input type="password" class="form-control" id="ingresar-password" placeholder="contraseña">
           </div>
           <button type="submit" class="btn btn-primary">Ingresar</button>
@@ -81,11 +91,11 @@
         <div class="modal-body">
           <form id="registrar-form">
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Usuario</label>
+              <label for="registrar-email" class="col-form-label">Usuario</label>
               <input type="text" class="form-control" id="registrar-email">
             </div>
             <div class="mb-3">
-              <label for="message-text" class="col-form-label">Contraseña</label>
+              <label for="registrar-password" class="col-form-label">Contraseña</label>
               <input type="password" class="form-control" id="registrar-password" placeholder="contraseña">
             </div>
             <button type="submit" class="btn btn-primary">Registrar</button>
@@ -94,6 +104,7 @@
       </div>
     </div>
   </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src="index.js"></script>
