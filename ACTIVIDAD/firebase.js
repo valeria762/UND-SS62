@@ -37,3 +37,9 @@
 
   //Eliminar o borrar post
   export const deletePost = (id) => deleteDoc(doc(db, "posts", id));
+
+  //Obtener un Post
+  export const getPost1 = (id) => getDoc(doc(db, "posts", id));
+
+  //Actualizar Post
+  export const updatePost = (id, nuevoContenido) => updateDoc(doc(db, "posts", id), nuevoContenido);
