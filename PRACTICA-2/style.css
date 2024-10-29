@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Lilita+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Crimson Pro', serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(img/imagen3.jpg);
+    width: 100%;
+    overflow: hidden;
+}
+
+.ring{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ring i{
+    position: absolute;
+    inset: 0;
+    border: 2px solid #c55f2f;
+    transition: 0.5s;
+}
+
+.ring i:nth-child(1){
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 10s linear infinite;
+}
+
+.ring i:nth-child(2){
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate2 10s linear infinite;
+}
+
+.ring i:nth-child(3){
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate3 10s linear infinite;
+}
+
+.ring:hover i{
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.login{
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 75px;
+    justify-items: center;
+    align-items: start;
+    gap: 12px;
+}
+
+img{
+    width: 105px;
+    height: 105px;
+}
+.titulo{
+    font-family: Lilita One;
+    color:azure;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.subtitulo{
+    font-family: Alata;
+    color:rgb(247, 247, 113);
+}
+.inicio{
+    border-radius: 25px;
+    padding: 10px;
+    background-color:#20ec75;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.inicio:hover{
+    background-color: #19b85b;
+     
+}
